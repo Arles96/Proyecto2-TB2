@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Menu from './components/Menu/Menu'
+import FormPuesto from './components/FormPuesto/FormPuesto'
 
 class App extends Component {
+
+  constructor(){
+    super()
+    this.menuExtend=this.menuExtend.bind(this)
+  }
+
+  menuExtend(){
+    console.log("boo")
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Hola React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <Menu event={this.menuExtend} />
+          <FormPuesto />
       </div>
     );
   }
