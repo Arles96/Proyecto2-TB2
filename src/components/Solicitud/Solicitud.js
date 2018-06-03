@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './Solicitud.css'
 export default class Solicitud extends Component {
     constructor(){
         super();
@@ -6,8 +7,9 @@ export default class Solicitud extends Component {
     }
     render() {
         return(
-            <form action="/action_page.php">
+            <form action="/action_page.php" id="formSolicitud">
                 <div class="form-group">
+                    <h2>Solicitud de empleo</h2>
                     <label for="numId">Numero de Identidad</label>
                     <input type="text" class="form-control" id="numId"/>
                 </div>

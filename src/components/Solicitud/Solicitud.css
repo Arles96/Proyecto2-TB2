@@ -1,0 +1,17 @@
+#formSolicitud .form-group {
+    border-style: dotted;
+    border-radius: 25px;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}
+
+#formSolicitud .form-control{
+    background-color: #a7aaaf;
+}
+
+#formSolicitud {
+    background-color: #191d23;
+    color: #6b7584;
+}
