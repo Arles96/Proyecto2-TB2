@@ -8,11 +8,12 @@
 }
 
 a {
-    color:  rgb(177, 176, 176);
+    color:  rgb(102, 102, 102);
+    cursor: pointer;
 }
 
 a:hover{
-    color: white;
+    color: black;
 }
 
 .menu-button {
@@ -25,7 +26,7 @@ a:hover{
 }
 
 .menu-button:hover {
-    color: white;
+    color: black;
     cursor: pointer;
 }
 

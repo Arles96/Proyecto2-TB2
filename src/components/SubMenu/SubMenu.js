@@ -13,11 +13,11 @@ export default class SubMenu extends Component {
             return (
                 <div>
                     <li className="nav-item link-menu" >
-                        <a href="#Home" className="nav-link">Enviar Solicutud</a>
+                        <a onClick={this.props.registrarS} className="nav-link">Enviar Solicutud</a>
                     </li>
                     <hr className="hr" />               
-                    <li className="nav-item link-menu" >
-                        <a href="#Home" className="nav-link">Registrar Empresa</a>
+                    <li  className="nav-item link-menu" >
+                        <a onClick={this.props.registrarE} className="nav-link">Registrar Empresa</a>
                     </li>
                     <hr className="hr" />  
                 </div>
@@ -26,11 +26,11 @@ export default class SubMenu extends Component {
             return (
                 <div>
                     <li className="nav-item link-menu" >
-                        <a href="#Home" className="nav-link">Crear Puesto</a>
+                        <a onClick={this.props.puesto} className="nav-link">Crear Puesto</a>
                     </li>
                     <hr className="hr" />               
-                    <li className="nav-item link-menu" >
-                        <a href="#Home" className="nav-link">Solicitudes</a>
+                    <li  className="nav-item link-menu" >
+                        <a onClick={this.props.solicitud} className="nav-link">Solicitudes</a>
                     </li>
                     <hr className="hr" />  
                 </div>
@@ -46,11 +46,11 @@ export default class SubMenu extends Component {
                     </div>
                 <ul className="nav flex-column nav-color2">
                     <li className="nav-item link-menu" >
-                        <a href="#Home" className="nav-link">Home</a>
+                        <a onClick={this.props.home} className="nav-link">Home</a>
                     </li>
                     <hr className="hr" />
-                    <li className="nav-item link-menu" >
-                        <a href="#Home" className="nav-link">Empresas</a>
+                    <li  className="nav-item link-menu" >
+                        <a onClick={this.props.empresa} className="nav-link">Empresas</a>
                     </li>
                     <hr className="hr" /> 
                     {this.renderButton()}
