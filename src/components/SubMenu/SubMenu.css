@@ -1,0 +1,36 @@
+.menu-deploy {
+    position: fixed;
+    width: 30vh !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin-top: 8.5vh;
+    height: 100vh !important;
+}
+
+a {
+    color:  rgb(177, 176, 176);
+}
+
+a:hover{
+    color: white;
+}
+
+.menu-button {
+    font-size: 32px;
+    color: rgb(177, 176, 176);
+}
+
+.menu-top {
+    padding: 1em;
+}
+
+.menu-button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.hr {
+    border: 1px solid rgb(177, 176, 176);
+    display: block;
+    width: 80%;
+}
