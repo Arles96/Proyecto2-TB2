@@ -4,7 +4,7 @@ export default class Menu extends Component {
     render() {
         return(
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light row">
+                <nav className="navbar-top navbar navbar-expand-lg navbar-light bg-light row">
                     <div className = "col-6 text-left">
 
                         <a onClick={this.props.event} className="navbar-brand" href="#"><i className="fas fa-bars"></i> Centro de Empleo</a>

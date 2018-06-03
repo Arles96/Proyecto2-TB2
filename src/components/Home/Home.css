@@ -1,0 +1,15 @@
+.home {
+    background: url(./building.jpg) no-repeat;
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;    
+}
+
