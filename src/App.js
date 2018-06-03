@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Menu from './components/Menu/Menu'
+import Solicitud from './components/Solicitud/Solicitud'
 import SubMenu from './components/SubMenu/SubMenu'
 import FormPuesto from './components/FormPuesto/FormPuesto'
 import CreateEmpresa from './components/CreateEmpresa/CreateEmpresa'
@@ -42,6 +43,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+          <Menu/>
+          <Solicitud/>
           <Menu event={this.menuExtend} />
           <Home />
           {this.renderMenu()}
