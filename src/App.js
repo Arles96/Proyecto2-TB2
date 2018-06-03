@@ -20,7 +20,6 @@ class App extends Component {
     return (
       <div className="App">
           <Menu event={this.menuExtend} />
-          <CreateEmpresa/>
       </div>
     );
   }
