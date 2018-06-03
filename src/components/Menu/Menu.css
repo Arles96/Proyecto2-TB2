@@ -1,0 +1,21 @@
+div.container {
+		width: 100%;
+		border: 1px solid white;
+	}
+nav {
+    float: center;
+    font-family: "Times New Roman", Times, serif;
+    font-style: bold;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul a {
+    text-decoration: none;
+}
+
+button {
+    font-family: fantasy;
+    width: 150px;
+}

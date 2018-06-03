@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Menu from './components/Menu/Menu'
 import FormPuesto from './components/FormPuesto/FormPuesto'
+import CreateEmpresa from './components/CreateEmpresa/CreateEmpresa'
 
 class App extends Component {
 
@@ -19,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
           <Menu event={this.menuExtend} />
-          <FormPuesto />
+          <CreateEmpresa/>
       </div>
     );
   }
