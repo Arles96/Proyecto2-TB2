@@ -19,3 +19,8 @@ button {
     font-family: fantasy;
     width: 150px;
 }
+
+.navbar-top {
+    height: 10vh;
+    margin: 0 !important;
+}

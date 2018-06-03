@@ -9,7 +9,7 @@ export default class SubMenu extends Component {
     }
 
     renderButton(){
-        if (this.props.login){
+        if (!this.props.login){
             return (
                 <div>
                     <li className="nav-item link-menu" >

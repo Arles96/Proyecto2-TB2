@@ -5,6 +5,7 @@ import Solicitud from './components/Solicitud/Solicitud'
 import SubMenu from './components/SubMenu/SubMenu'
 import FormPuesto from './components/FormPuesto/FormPuesto'
 import CreateEmpresa from './components/CreateEmpresa/CreateEmpresa'
+import Home from './components/Home/Home'
 
 class App extends Component {
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Menu/>
           <Solicitud/>
           <Menu event={this.menuExtend} />
+          <Home />
           {this.renderMenu()}
       </div>
     );
