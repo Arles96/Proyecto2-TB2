@@ -32,6 +32,7 @@ export default class ListaEmpresas extends Component{
                         <p><b>Director:</b> {doc.val().director}</p>
                         <p><b>Fecha Constituida:</b> {doc.val().fecha}</p>
                         <p><b>Direccion:</b> {doc.val().direccion}</p>
+                        <p><b>CIF:</b> {doc.key}</p>
                         <ListaPuestos cif={doc.key} />
                     </div>
                 </div>
