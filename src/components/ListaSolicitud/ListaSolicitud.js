@@ -45,6 +45,7 @@ export default class ListaSolicitudes extends Component {
                         <p><b>Salario:</b> {doc.val().salario}</p>
                         <p><b>Familiares:</b> {doc.val().familiares}</p>
                         <p><b>Servicio Militar:</b> {doc.val().militar}</p>
+                        <p><b>Salario:</b> {doc.val().salario}</p>
                     </div>
                 </div>
             )

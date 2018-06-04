@@ -3,8 +3,8 @@ import './CreateEmpresa.css'
 export default class CreateEmpresa extends Component{
     render() {
         return(
-            <div>
-                <form onSubmit={this.props.submit} >
+            <div className="create-comp" >
+                <form onSubmit={this.props.submit} className="form-comp" >
                     <div className="form-group text-left">
                         <label for="formGroupExampleInput">Nombre de la Empresa</label>
                         <input type="text" className="form-control FormPuesto" name="nombre" placeholder="Genesis"/>
