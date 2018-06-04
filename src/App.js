@@ -8,7 +8,8 @@ import CreateEmpresa from './components/CreateEmpresa/CreateEmpresa'
 import Home from './components/Home/Home'
 import {database} from 'firebase'
 import ListaSolicitud from './components/ListaSolicitud/ListaSolicitud'
-import ListaPuestos from './components/ListaPuestos/ListaPuestos'
+import ListaEmpresas from './components/ListaPuestos/ListaEmpresas'
+
 
 class App extends Component {
 
@@ -152,7 +153,9 @@ class App extends Component {
       )
     }else if (this.state.empresas){
       return (
-        <div>Aqui va el componente que se mira todas las empresas</div>
+        <div>
+          <ListaEmpresas/>
+        </div>
       )
     }else if (this.state.registrarS) {
       return (

@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {database} from 'firebase'
 
-export default class ListaPuestos extends Component{
+
+export default class ListaEmpresas extends Component{
     constructor(){
         super()
         this.state = {
@@ -10,7 +11,7 @@ export default class ListaPuestos extends Component{
     }
 
     componentDidMount(){
-        database().ref('/puestos').on('value', (snapshot)=> {
+        database().ref('/empresas').on('value', (snapshot)=> {
             let list = []
             snapshot.forEach(doc => {
                 if (doc.val().puesto===this.props.puesto){
@@ -30,12 +31,10 @@ export default class ListaPuestos extends Component{
                     <div className="card-body" >
                         <h3 className="card-title text-center" >Puesto No. {i+1}</h3>
                         <h5>Nombre: {doc.val().nombre}</h5>
-                        <p><b>Lugar:</b> {doc.val().lugar}</p>
-                        <p><b>Requisitos Académicos:</b> {doc.val().requisitosAcademicos}</p>
-                        <p><b>Requisitos Legales:</b> {doc.val().requisitosLegales}</p>
-                        <p><b>Requisitos Personales:</b> {doc.val().requisitosPersonales}</p>
-                        <p><b>Requisitos Profesionales:</b> {doc.val().requisitosProfesionales}</p>
-                        <p><b>sueldo:</b> {doc.val().sueldo}</p>
+                        <p><b>Director:</b> {doc.val().director}</p>
+                        <p><b>Fecha Constituida:</b> {doc.val().fecha}</p>
+                        <p><b>Direccion:</b> {doc.val().dirrecion}</p>
+                        
                     </div>
                 </div>
             )
