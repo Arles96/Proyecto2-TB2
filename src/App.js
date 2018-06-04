@@ -8,6 +8,7 @@ import CreateEmpresa from './components/CreateEmpresa/CreateEmpresa'
 import Home from './components/Home/Home'
 import {database} from 'firebase'
 import ListaSolicitud from './components/ListaSolicitud/ListaSolicitud'
+import ListaPuestos from './components/ListaPuestos/ListaPuestos'
 
 class App extends Component {
 

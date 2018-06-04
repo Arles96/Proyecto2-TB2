@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
+import {database} from 'firebase'
 
-export default class CreateEmpresa extends Component{
+export default class ListaPuestos extends Component{
     constructor(){
         super()
         this.state = {
@@ -12,7 +13,7 @@ export default class CreateEmpresa extends Component{
         database().ref('/puestos').on('value', (snapshot)=> {
             let list = []
             snapshot.forEach(doc => {
-                if (doc.val().cif===this.props.cif){
+                if (doc.val().puesto===this.props.puesto){
                     list.push(doc)
                     this.setState({
                         list : list
@@ -29,20 +30,12 @@ export default class CreateEmpresa extends Component{
                     <div className="card-body" >
                         <h3 className="card-title text-center" >Puesto No. {i+1}</h3>
                         <h5>Nombre: {doc.val().nombre}</h5>
-                        <p><b>Carrera:</b> {doc.val().carrera}</p>
-                        <p><b>Antecedentes:</b> {doc.val().antecedentes}</p>
-                        <p><b>Celular:</b> {doc.val().celular}</p>
-                        <p><b>Direccion:</b> {doc.val().direccion}</p>
-                        <p><b>Universidad:</b> {doc.val().universidad}</p>
-                        <p><b>Carrera:</b> {doc.val().carrera}</p>
-                        <p><b>Contrato:</b> {doc.val().contrato}</p>
-                        <p><b>Empresa Actual:</b> {doc.val().empresaActual}</p>
-                        <p><b>Experiencia</b>: {doc.val().experiencia} años</p>
-                        <p><b>puesto:</b> {doc.val().puesto}</p>
-                        <p><b>Referencia:</b> {doc.val().referencia}</p>
-                        <p><b>Salario:</b> {doc.val().salario}</p>
-                        <p><b>Familiares:</b> {doc.val().familiares}</p>
-                        <p><b>Servicio Militar:</b> {doc.val().militar}</p>
+                        <p><b>Lugar:</b> {doc.val().lugar}</p>
+                        <p><b>Requisitos Académicos:</b> {doc.val().requisitosAcademicos}</p>
+                        <p><b>Requisitos Legales:</b> {doc.val().requisitosLegales}</p>
+                        <p><b>Requisitos Personales:</b> {doc.val().requisitosPersonales}</p>
+                        <p><b>Requisitos Profresionales:</b> {doc.val().requisitosProfesionales}</p>
+                        <p><b>sueldo:</b> {doc.val().sueldo}</p>
                     </div>
                 </div>
             )

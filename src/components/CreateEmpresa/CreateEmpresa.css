@@ -1,4 +1,12 @@
-form {
-    Padding: 2px,2px,2px,2px;
+.create-comp {
     text-align: center;
+}
+
+.form-comp {
+    margin: auto;
+    width: 80%;
+}
+
+.input-comp {
+    width: 100%;
 }
