@@ -1,3 +1,11 @@
 .FormPuesto{
     width: 30%;
 }
+
+.create-comp {
+    text-align: center;
+}
+.form-comp {
+    margin: auto;
+    width: 80%;
+}

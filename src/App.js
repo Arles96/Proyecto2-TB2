@@ -186,6 +186,7 @@ class App extends Component {
     this.setState({
       login : true
     })
+    alert("Se ha creado una empresa")
   }
 
   //Funcion para el login de la empresa
