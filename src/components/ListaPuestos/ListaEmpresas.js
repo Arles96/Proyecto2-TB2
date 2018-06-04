@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {database} from 'firebase'
-
+import ListaPuestos from './ListaPuestos'
 
 export default class ListaEmpresas extends Component{
     constructor(){
@@ -11,15 +11,13 @@ export default class ListaEmpresas extends Component{
     }
 
     componentDidMount(){
-        database().ref('/empresas').on('value', (snapshot)=> {
+        database().ref('/empresa').on('value', (snapshot)=> {
             let list = []
             snapshot.forEach(doc => {
-                if (doc.val().puesto===this.props.puesto){
-                    list.push(doc)
-                    this.setState({
-                        list : list
-                    })
-                }
+                list.push(doc)
+                this.setState({
+                    list : list
+                })
             })
         })
     }
@@ -29,18 +27,19 @@ export default class ListaEmpresas extends Component{
             return (
                 <div className="card" key={i} >
                     <div className="card-body" >
-                        <h3 className="card-title text-center" >Puesto No. {i+1}</h3>
+                        <h3 className="card-title text-center" >Empresa No. {i+1}</h3>
                         <h5>Nombre: {doc.val().nombre}</h5>
                         <p><b>Director:</b> {doc.val().director}</p>
                         <p><b>Fecha Constituida:</b> {doc.val().fecha}</p>
-                        <p><b>Direccion:</b> {doc.val().dirrecion}</p>
-                        
+                        <p><b>Direccion:</b> {doc.val().direccion}</p>
+                        <ListaPuestos cif={doc.key} />
                     </div>
                 </div>
             )
         })
         return(
             <div>
+                <h2 className="text-center" >Lista de Empresas Registradas</h2>
                 {data}
             </div>
         )

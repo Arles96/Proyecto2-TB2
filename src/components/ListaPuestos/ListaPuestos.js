@@ -10,15 +10,13 @@ export default class ListaPuestos extends Component{
     }
 
     componentDidMount(){
-        database().ref('/puestos').on('value', (snapshot)=> {
+        database().ref(`/empresa/${this.props.cif}/puesto`).on('value', (snapshot)=> {
             let list = []
             snapshot.forEach(doc => {
-                if (doc.val().puesto===this.props.puesto){
-                    list.push(doc)
-                    this.setState({
-                        list : list
-                    })
-                }
+                list.push(doc)
+                this.setState({
+                    list : list
+                })
             })
         })
     }
