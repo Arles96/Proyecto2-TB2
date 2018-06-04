@@ -30,41 +30,42 @@ export default class FormPuesto extends Component{
 
     render(){
         return(
-        <div>
-            <form onSubmit={this.registerPuesto} >
+        <div className="create-comp">
+        <h2 className="text-center font-weight-bold">Creando Puesto</h2>
+            <form onSubmit={this.registerPuesto} className="form-comp" >
             <div className="form-group text-left">
-                <label>Nombre</label>
-                <input type="text" className="form-control FormPuesto" name="nombre" placeholder="Ingrese el nombre"/>
+                <label className="font-weight-bold">Nombre</label>
+                <input type="text" className="form-control FormPuesto input-comp" name="nombre" placeholder="Ingrese el nombre"/>
             </div>
             <div className="form-group text-left">
-                <label>Requisitos legales</label>
-                <textarea className="form-control FormPuesto" name="legales" rows="2"></textarea>
+                <label className="font-weight-bold">Requisitos legales</label>
+                <textarea className="form-control FormPuesto input-comp" name="legales" rows="2"></textarea>
             </div>
             <div className="form-group text-left">
-                <label>Requisitos Personales</label>
-                <textarea className="form-control FormPuesto" name="personales" rows="2"></textarea>
+                <label className="font-weight-bold">Requisitos Personales</label>
+                <textarea className="form-control FormPuesto input-comp" name="personales" rows="2"></textarea>
             </div>
             <div className="form-group text-left">
-                <label>Requisitos Academicos</label>
-                <textarea className="form-control FormPuesto" name="academicos" rows="2"></textarea>
+                <label className="font-weight-bold">Requisitos Academicos</label>
+                <textarea className="form-control FormPuesto input-comp" name="academicos" rows="2"></textarea>
             </div>
             <div className="form-group text-left">
-                <label>Requisitos Sanitarios</label>
-                <textarea className="form-control FormPuesto" name="sanitarios" rows="2"></textarea>
+                <label className="font-weight-bold">Requisitos Sanitarios</label>
+                <textarea className="form-control FormPuesto input-comp" name="sanitarios" rows="2"></textarea>
             </div>
             <div className="form-group text-left">
-                <label>Requisitos Profesionales</label>
-                <textarea className="form-control FormPuesto" name="profesionales" rows="2"></textarea>
+                <label className="font-weight-bold">Requisitos Profesionales</label>
+                <textarea className="form-control FormPuesto input-comp" name="profesionales" rows="2"></textarea>
             </div>
             <div className="form-group text-left">
-                <label>Lugar Empleo</label>
-                <input type="text" className="form-control FormPuesto" name="lugar" placeholder="Ingrese el lugar del empleo"/>
+                <label className="font-weight-bold">Lugar Empleo</label>
+                <input type="text" className="form-control FormPuesto input-comp" name="lugar" placeholder="Ingrese el lugar del empleo"/>
             </div>
             <div className="form-group text-left">
-                <label>Sueldo</label>
-                <input type="text" className="form-control FormPuesto" name="sueldo" placeholder="Ingrese el sueldo"/>
+                <label className="font-weight-bold">Sueldo</label>
+                <input type="text" className="form-control FormPuestoinput-comp " name="sueldo" placeholder="Ingrese el sueldo"/>
             </div>
-            <button type="submit">Registrar</button>
+            <button className="btn btn-primary btn-block"type="submit">Registrar</button>
             </form>
         </div>
         )  
