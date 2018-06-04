@@ -7,6 +7,7 @@ import FormPuesto from './components/FormPuesto/FormPuesto'
 import CreateEmpresa from './components/CreateEmpresa/CreateEmpresa'
 import Home from './components/Home/Home'
 import {database} from 'firebase'
+import ListaSolicitud from './components/ListaSolicitud/ListaSolicitud'
 
 class App extends Component {
 
@@ -20,7 +21,8 @@ class App extends Component {
       registrarS : false,
       registrarE : false,
       puesto : false,
-      solicitud : false
+      solicitud : false,
+      cif : null
     }
     this.menuExtend=this.menuExtend.bind(this)
     this.closeMenu = this.closeMenu.bind(this)
@@ -161,11 +163,11 @@ class App extends Component {
       )
     }else if (this.state.puesto){
       return (
-        <FormPuesto />
+        <FormPuesto cif={this.state.cif} />
       )
     }else {
       return (
-        <div>Aqui va el Componente que mira todas las solicitudes de la empresa logueada</div>
+        <ListaSolicitud cif={this.state.cif} />
       )
     }
   }
@@ -192,9 +194,10 @@ class App extends Component {
     let pass = e.target.pass.value
     database().ref('/empresa').on('value', (snashop)=> {
       snashop.forEach(doc => {
-          if (doc.key===cif&& doc.val().ingreso===pass){
+          if (doc.key===cif && doc.val().ingreso===pass){
             this.setState({
-              login : true
+              login : true,
+              cif : doc.key
             })
           }
       })
