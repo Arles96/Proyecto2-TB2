@@ -6,6 +6,7 @@ import SubMenu from './components/SubMenu/SubMenu'
 import FormPuesto from './components/FormPuesto/FormPuesto'
 import CreateEmpresa from './components/CreateEmpresa/CreateEmpresa'
 import Home from './components/Home/Home'
+import {database} from 'firebase'
 
 class App extends Component {
 
@@ -31,6 +32,8 @@ class App extends Component {
     this.handleRegistrarS = this.handleRegistrarS.bind(this)
     this.handleSolicitud = this.handleSolicitud.bind(this)
     this.renderContainer = this.renderContainer.bind(this)
+    this.registerEmpresa = this.registerEmpresa.bind(this)
+    this.loginEmpresa = this.loginEmpresa.bind(this)
   }
 
   //Funcion para cambiar el estado de submenu true
@@ -154,7 +157,7 @@ class App extends Component {
       )
     }else if (this.state.registrarE){
       return (
-        <CreateEmpresa />
+        <CreateEmpresa submit={this.registerEmpresa} />
       )
     }else if (this.state.puesto){
       return (
@@ -167,10 +170,44 @@ class App extends Component {
     }
   }
 
+  //Funcion para el formulario de inscribir empresa 
+  registerEmpresa(e){
+    e.preventDefault()
+    database().ref(`/empresa/${e.target.cif.value}`).set({
+      nombre : e.target.nombre.value,
+      ingreso : e.target.ingreso.value,
+      director : e.target.director.value,
+      fecha : e.target.date.value,
+      direccion : e.target.direccion.value
+    })
+    this.setState({
+      login : true
+    })
+  }
+
+  //Funcion para el login de la empresa
+  loginEmpresa(e) {
+    e.preventDefault()
+    let cif = e.target.cif.value
+    let pass = e.target.pass.value
+    database().ref('/empresa').on('value', (snashop)=> {
+      snashop.forEach(doc => {
+          if (doc.key===cif&& doc.val().ingreso===pass){
+            this.setState({
+              login : true
+            })
+          }
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
-          <Menu event={this.menuExtend} />
+          <Menu 
+            event={this.menuExtend} 
+            login={this.loginEmpresa}
+          />
           {this.renderContainer()}
           {this.renderMenu()}
       </div>

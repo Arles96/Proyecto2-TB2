@@ -13,9 +13,9 @@ export default class Menu extends Component {
                         </button>
                     </div>
                     <div className="collapse navbar-collapse col-6">
-                        <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" type="number" placeholder="CIF" aria-label="Search"/>
-                            <input className="form-control mr-sm-2" type="password" placeholder="Clave" aria-label="Search"/>
+                        <form onSubmit={this.props.login} className="form-inline my-2 my-lg-0">
+                            <input name="cif" className="form-control mr-sm-2" type="number" placeholder="CIF" aria-label="Search"/>
+                            <input name="pass" className="form-control mr-sm-2" type="password" placeholder="Clave" aria-label="Search"/>
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
                         </form>
                     </div>
