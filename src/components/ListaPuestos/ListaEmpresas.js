@@ -39,8 +39,8 @@ export default class ListaEmpresas extends Component{
             )
         })
         return(
-            <div>
-                <h2 className="text-center" >Lista de Empresas Registradas</h2>
+            <div className="container" >
+                <h2 className="text-center m-5" >Lista de Empresas Registradas</h2>
                 {data}
             </div>
         )

@@ -36,72 +36,72 @@ export default class Solicitud extends Component {
     render() {
         return(
             <form className="pt-3" onSubmit={this.registerSolicitud} id="formSolicitud">
-                <div class="form-group">
+                <div className="form-group">
                     <h2>Solicitud de empleo</h2>
-                    <label for="numId">Numero de Identidad</label>
-                    <input name="identidad" type="text" class="form-control" id="numId"/>
+                    <label>Numero de Identidad</label>
+                    <input name="identidad" type="text" className="form-control" id="numId"/>
                 </div>
-                <div class="form-group">
-                    <label for="name">Nombre Completo:</label>
-                    <input name="nombre" type="text" class="form-control" id="name"/>
+                <div className="form-group">
+                    <label>Nombre Completo:</label>
+                    <input name="nombre" type="text" className="form-control" id="name"/>
                 </div>
-                <div class="form-group">
-                    <label for="direccion">Direccion:</label>
-                    <input name="direccion" type="text" class="form-control" id="direccion"/>
+                <div className="form-group">
+                    <label>Direccion:</label>
+                    <input name="direccion" type="text" className="form-control" id="direccion"/>
                 </div>
-                <div class="form-group">
-                    <label for="celular">Celular:</label>
-                    <input name="celular" type="number" class="form-control" id="celular"/>
+                <div className="form-group">
+                    <label>Celular:</label>
+                    <input name="celular" type="number" className="form-control" id="celular"/>
                 </div>
-                <div class="form-group">
-                    <label for="referencia">Referencia:</label>
-                    <input name="referencia" type="text" class="form-control" id="referencia"/>
+                <div className="form-group">
+                    <label>Referencia:</label>
+                    <input name="referencia" type="text" className="form-control" id="referencia"/>
                 </div>
-                <div class="form-group">
-                    <label for="">Puestos a los que aspira:</label><br/>
-                    <label for="tipoContrato">Tipo de contrato:</label>
-                    <input name="contrato"  type="text" class="form-control" id="tipoContrato"/>
-                    <label for="salarioDeseado">Salario deseado:</label>
-                    <input name="salario" type="number" class="form-control" id="salarioDeseado"/>
-                    <label for="empleosSimilares">Empleos similares:</label>
-                    <textarea name="similares" rows="3" class="form-control" id="empleosSimilares"/>
+                <div className="form-group">
+                    <label>Puestos a los que aspira:</label><br/>
+                    <label>Tipo de contrato:</label>
+                    <input name="contrato"  type="text" className="form-control" id="tipoContrato"/>
+                    <label >Salario deseado:</label>
+                    <input name="salario" type="number" className="form-control" id="salarioDeseado"/>
+                    <label>Empleos similares:</label>
+                    <textarea name="similares" rows="3" className="form-control" id="empleosSimilares"/>
                 </div>
-                <div class="form-group">
-                    <label for="experiencia">Años de experiencia:</label>
-                    <input name="experiencia" type="number" class="form-control" id="experiencia"/>
+                <div className="form-group">
+                    <label>Años de experiencia:</label>
+                    <input name="experiencia" type="number" className="form-control" id="experiencia"/>
                 </div>
-                <div class="form-group">
-                    <label for="">Universidad:</label>
-                    <label for="nomUniversidad">Nombre:</label>
-                    <input name="universidad" type="text" class="form-control" id="nomUniversidad"/>
-                    <label for="carrera">Carrera:</label>
-                    <input name="carrera" type="text" class="form-control" id="carrera"/>
+                <div className="form-group">
+                    <label>Universidad:</label>
+                    <label>Nombre:</label>
+                    <input name="universidad" type="text" className="form-control" id="nomUniversidad"/>
+                    <label>Carrera:</label>
+                    <input name="carrera" type="text" className="form-control" id="carrera"/>
                 </div>
-                <div class="form-group">
-                    <label for="servMilitar">Servicio militar:</label>
-                    <input name="militar" type="text" class="form-control" id="servMilitar"/>
+                <div className="form-group">
+                    <label>Servicio militar:</label>
+                    <input name="militar" type="text" className="form-control" id="servMilitar"/>
                 </div>
-                <div class="form-group">
-                    <label for="antPenales">Antecedentes penales:</label>
-                    <input name="antecedentes" type="text" class="form-control" id="antPenales"/>
+                <div className="form-group">
+                    <label>Antecedentes penales:</label>
+                    <input name="antecedentes" type="text" className="form-control" id="antPenales"/>
                 </div>
-                <div class="form-group">
-                    <label for="empresaActual">Empresa en la que trabaja actualmente:</label>
-                    <input name="empresaActual" type="text" class="form-control" id="empresaActual"/>
+                <div className="form-group">
+                    <label>Empresa en la que trabaja actualmente:</label>
+                    <input name="empresaActual" type="text" className="form-control" id="empresaActual"/>
                 </div>
-                <div class="form-group">
-                    <label for="puestoActual">Puesto actual:</label>
-                    <input name="puesto" type="text" class="form-control" id="puestoActual"/>
+                <div className="form-group">
+                    <label>Puesto actual:</label>
+                    <input name="puesto" type="text" className="form-control" id="puestoActual"/>
                 </div>
-                <div class="form-group">
-                    <label for="familiares">Familiares:</label>
-                    <textarea name="familiares"  rows="3" class="form-control" id="familiares"/>
+                <div className="form-group">
+                    <label>Familiares:</label>
+                    <textarea name="familiares"  rows="3" className="form-control" id="familiares"/>
                 </div>
-                <div class="form-group">
-                    <label for="familiares">CIF de la empresa que desea trabajar:</label>
-                    <input name="cif" type="number" class="form-control" id="puestoActual"/>
+                <div className="form-group">
+                    <label>CIF de la empresa que desea trabajar:</label>
+                    <input name="cif" type="number" className="form-control" id="puestoActual1"/>
                 </div>
-                <button type="submit" class="btn btn-default">Enviar</button>
+                <button type="submit" className="btn btn-default">Enviar</button>
             </form>
         )
     }

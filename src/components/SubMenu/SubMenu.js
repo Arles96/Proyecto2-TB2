@@ -32,7 +32,11 @@ export default class SubMenu extends Component {
                     <li  className="nav-item link-menu" >
                         <a onClick={this.props.solicitud} className="nav-link">Solicitudes</a>
                     </li>
-                    <hr className="hr" />  
+                    <hr className="hr" />
+                    <li  className="nav-item link-menu" >
+                        <a onClick={this.props.listP} className="nav-link">Lista de puestos</a>
+                    </li>
+                    <hr className="hr" />    
                 </div>
             )
         }

@@ -9,6 +9,7 @@ import Home from './components/Home/Home'
 import {database} from 'firebase'
 import ListaSolicitud from './components/ListaSolicitud/ListaSolicitud'
 import ListaEmpresas from './components/ListaPuestos/ListaEmpresas'
+import ListaPuestos from './components/ListaPuestos/ListaPuestos'
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
       registrarE : false,
       puesto : false,
       solicitud : false,
+      listP : false,
       cif : null
     }
     this.menuExtend=this.menuExtend.bind(this)
@@ -38,6 +40,27 @@ class App extends Component {
     this.renderContainer = this.renderContainer.bind(this)
     this.registerEmpresa = this.registerEmpresa.bind(this)
     this.loginEmpresa = this.loginEmpresa.bind(this)
+    this.handleSingUp = this.handleSingUp.bind(this)
+    this.handleListPuesto = this.handleListPuesto.bind(this)
+  }
+
+  handleListPuesto(){
+    this.setState({
+      home : false,
+      empresas : false,
+      registrarS : false,
+      registrarE : false,
+      puesto : false,
+      listP : true,
+      solicitud : false
+    })
+  }
+
+  handleSingUp(){
+    this.setState({
+      login : false,
+      cif : null
+    })
   }
 
   //Funcion para cambiar el estado de submenu true
@@ -67,6 +90,7 @@ class App extends Component {
           registrarE={this.handleRegistrarE}
           puesto={this.handlePuesto}
           solicitud={this.handleSolicitud}
+          listP={this.handleListPuesto}
         />
       )
     }
@@ -80,6 +104,7 @@ class App extends Component {
       registrarS : false,
       registrarE : false,
       puesto : false,
+      listP : false,
       solicitud : false
     })
     console.log("Home")
@@ -93,6 +118,7 @@ class App extends Component {
       registrarS : false,
       registrarE : false,
       puesto : false,
+      listP : false,
       solicitud : false
     })
   }
@@ -105,6 +131,7 @@ class App extends Component {
       registrarS : true,
       registrarE : false,
       puesto : false,
+      listP : false,
       solicitud : false
     })
   }
@@ -117,6 +144,7 @@ class App extends Component {
       registrarS : false,
       registrarE : true,
       puesto : false,
+      listP : false,
       solicitud : false
     })
   }
@@ -129,6 +157,7 @@ class App extends Component {
       registrarS : false,
       registrarE : false,
       puesto : true,
+      listP : false,
       solicitud : false
     })
   }
@@ -141,6 +170,7 @@ class App extends Component {
       registrarS : false,
       registrarE : false,
       puesto : false,
+      listP : false,
       solicitud : true
     })
   }
@@ -168,6 +198,10 @@ class App extends Component {
     }else if (this.state.puesto){
       return (
         <FormPuesto cif={this.state.cif} />
+      )
+    }else if (this.state.listP){
+      return (
+        <ListaPuestos checker={true} cif={this.state.cif} />
       )
     }else {
       return (
@@ -204,6 +238,7 @@ class App extends Component {
               login : true,
               cif : doc.key
             })
+            database()
           }
       })
     })
@@ -215,6 +250,8 @@ class App extends Component {
           <Menu 
             event={this.menuExtend} 
             login={this.loginEmpresa}
+            checker={this.state.login}
+            signup={this.handleSingUp}
           />
           {this.renderContainer()}
           {this.renderMenu()}
