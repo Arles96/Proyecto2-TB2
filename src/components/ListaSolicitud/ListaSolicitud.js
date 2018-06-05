@@ -48,6 +48,8 @@ export default class ListaSolicitudes extends Component {
                             <p><b>Familiares:</b> {doc.val().familiares}</p>
                             <p><b>Servicio Militar:</b> {doc.val().militar}</p>
                             <p><b>Salario:</b> {doc.val().salario}</p>
+                            <div class="btn">Aceptar</div>
+                            <div class="btn btnDel">Eliminar</div>
                         </div>
                     </div>
                 </div>
