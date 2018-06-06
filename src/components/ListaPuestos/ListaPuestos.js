@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {database} from 'firebase'
+import './ListaPuesto.css'
 
 export default class ListaPuestos extends Component{
     constructor(){
@@ -7,6 +8,25 @@ export default class ListaPuestos extends Component{
         this.state = {
             list : []
         }
+        this.handleRemovePuesto = this.handleRemovePuesto.bind(this)
+        this.renderSearch = this.renderSearch.bind(this)
+        this.handleFind = this.handleFind.bind(this)
+    }
+
+    handleFind(e){
+        e.preventDefault()
+        let name = e.target.find.value
+        database().ref(`/empresa/${this.props.cif}/puesto`).on('value', (snapshot)=> {
+            let list = []
+            snapshot.forEach(doc => {
+                if (name===doc.val().nombre) {
+                    list.push(doc)
+                    this.setState({
+                        list : list
+                    })
+                }
+            })
+        })
     }
 
     handleRemovePuesto(e){
@@ -15,6 +35,17 @@ export default class ListaPuestos extends Component{
             this.setState({
                 list : []
             })
+        }
+    }
+
+    renderSearch(){
+        if (this.props.checker){
+            return (
+                <form onSubmit={this.handleFind} className="form-inline mx-auto form-find">
+                    <input className="form-control form-find" name="find" placeholder="Ingrese nombre del puesto" />
+                    <button className="m-5 btn btn" type="submit">Buscar</button>
+                </form>
+            )
         }
     }
 
@@ -68,6 +99,14 @@ export default class ListaPuestos extends Component{
         return(
             <div className="container" >
                 <h2 className="text-center m-5" >Lista de Puestos de la Empresa</h2>
+                <div className="text-center row" >
+                    <div className="col-6 pb-4" >
+                        {this.renderSearch()}
+                    </div>
+                    <div className="col-6 text-left pt-4" >
+                        <button className="btn btn-primary m-3">Todos</button>
+                    </div>                    
+                </div>
                 {data}
             </div>
         )
